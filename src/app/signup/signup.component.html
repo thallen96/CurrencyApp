@@ -1,16 +1,18 @@
-<div class="form-container">
-  <a routerLink="/login" id="goback">Go back</a>
 
-  <h2>Join now</h2>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
-  <span class="error" *ngIf="error">{{ error }}</span>
-    
-  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+<form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+  <div class="box">
+    <h1>Sign-up</h1>
 
-    <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
-    <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+      <input type="email" name="email" placeholder="Email" value="email" (ngModel)="email" onblur="field_blur(this, 'email');" class="email" />
 
+      <input type="password" name="password" value="password" placeholder="Password" (ngModel)="password" onblur="field_blur(this, 'email');" class="email" />
 
-    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Create my account</button>
-  </form>
-</div>
+      <br />
+      <button class='btn' type="submit" [disabled]="!formData.valid" class="basic-btn">Create my account</button> <!-- End Btn -->
+
+      <p style="color:#f1c40f;">Return to sign-in <a routerLink="/login" outerLinkActive="active" class="alc" style="color:#f1c40f;">Click Here!</a></p>
+
+    </div> <!-- End Box -->
+</form>

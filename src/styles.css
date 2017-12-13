@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: linear-gradient(to right, #ffffff, #4B9CD3);
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+.main{
+  width: 90%;
+  margin: auto;
+  border-radius: 0px 0px 15px 15px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-top: none;
+  background: rgba(220, 220, 220, 0.5);
+  font-family: 'Raleway', sans-serif;
+  height: 500px;
+}
+
+/** Navbar section **/
+.header{
+  background-color: #000;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px;
+  margin: 0px;
+}
+
+.navbar{
+  margin: 0px;
+  font-size: 125%;
+}
+
+.navbar h1{
+  color: white;
+}

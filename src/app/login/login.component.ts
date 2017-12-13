@@ -6,14 +6,16 @@ import * as firebase from 'firebase/app';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  scripts: ['./login.component.js',
+  ]
 })
 export class LoginComponent implements OnInit {
 
   error: any;
   constructor(public af: AngularFireAuth,private router: Router) {
 
-    this.af.authState.subscribe(auth => { 
+    this.af.authState.subscribe(auth => {
     if(auth) {
       this.router.navigateByUrl('/members');
     }
@@ -29,6 +31,21 @@ loginGoogle() {
       (err) => {
       this.error = err;
     })
+}
+
+onSubmit(formData) {
+  if(formData.valid) {
+    this.af.auth.signInWithEmailAndPassword(
+      formData.value.email,
+      formData.value.password
+    ).then(
+      (success) => {
+      this.router.navigate(['/members']);
+    }).catch(
+      (err) => {
+      this.error = err;
+    })
+  }
 }
 
   ngOnInit() {

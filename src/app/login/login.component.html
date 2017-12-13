@@ -1,3 +1,24 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
+<form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+  <div class="box">
+    <h1>Sign-in</h1>
+
+      <input type="email" name="email" placeholder="Email" value="email" (ngModel)="email" onblur="field_blur(this, 'email');" class="email" />
+
+      <input type="password" name="password" value="password" placeholder="Password" (ngModel)="password" onblur="field_blur(this, 'email');" class="email" />
+
+      <button (click)="loginGoogle()" id="google">Or sign-in with Google</button>
+      <br />
+      <a href="#"><div class="btn">Sign In</div></a> <!-- End Btn -->
+      <a routerLink="/signup" outerLinkActive="active" class="alc"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
+      <p style="color:#f1c40f;">Forgot your password? <u style="color:#f1c40f;">Click Here!</u></p>
+
+    </div> <!-- End Box -->
+</form>
+
+<!--
+
 <div class="form-container">
 
     <span class="error" *ngIf="error">{{ error }}</span>
@@ -7,3 +28,4 @@
 
   <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
 </div>
+-->
